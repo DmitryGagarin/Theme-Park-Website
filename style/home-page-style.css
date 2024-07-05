@@ -54,6 +54,7 @@ nav a:hover {
     display: none;
 }
 
+/* Responsive design for 768px and below */
 @media (max-width: 900px) {
     .nav-links a {
         font-size: calc(3vw - 1%)
@@ -66,7 +67,6 @@ nav a:hover {
     .side-news {
         display: none;
     }
-
 }
 
 @media (max-width: 768px) {

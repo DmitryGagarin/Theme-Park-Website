@@ -42,6 +42,7 @@ nav a:hover {
     transition: padding 0.3s;
 }
 
+/* sets small screen header checkbox to invisible and sets some properties to it */
 #menu-icon {
     display: none;
     font-size: 30px;
@@ -77,6 +78,8 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+
+/* sets header and navigation properties to small screens */
 @media (max-width: 900px) {
     .nav-links a {
         font-size: calc(3vw - 1%)
@@ -216,6 +219,7 @@ section {
     font-size: 16px;
 }
 
+/* changes some sizes of cards in small screens */
 @media (max-width: 900px) {
     .event-card button {
         margin: 4px;

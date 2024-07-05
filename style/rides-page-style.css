@@ -1,10 +1,10 @@
+/* main settings for the whole page */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #1e4176;
-    /* Dark blue background */
     color: #fff;
 }
 
@@ -42,6 +42,17 @@ nav a:hover {
     transition: padding 0.3s;
 }
 
+@media (max-width: 900px) {
+    .nav-links a {
+        font-size: calc(3vw - 1%)
+    }
+
+    header h1 {
+        font-size: calc(4vw - 1%);
+    }
+}
+
+/* sets small screen header checkbox to invisible and sets some properties to it */
 #menu-icon {
     display: none;
     font-size: 30px;
@@ -54,21 +65,7 @@ nav a:hover {
     display: none;
 }
 
-@media (max-width: 900px) {
-    .nav-links a {
-        font-size: calc(3vw - 1%)
-    }
-
-    header h1 {
-        font-size: calc(4vw - 1%);
-    }
-
-    .side-news {
-        display: none;
-    }
-
-}
-
+/* sets header and navigation properties to small screens */
 @media (max-width: 768px) {
     #menu-icon {
         display: block;
@@ -112,6 +109,114 @@ nav a:hover {
     }
 }
 
+/* main settings for the whole page */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.attraction {
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attraction img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.attraction .info {
+    padding: 10px;
+}
+
+.attraction h2 {
+    margin-top: 0;
+}
+
+.attraction p {
+    margin-bottom: 0;
+}
+
+/* This `@keyframes` rule defines an animation called `animatedgradient` that changes 
+the background position of the linear gradient in the "attraction" class. */
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 25% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 25% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.attraction {
+    --borderWidth: 5px;
+    /* Sets custom property `--borderWidth` to 5px. */
+    border: none;
+    /* Removes border, adds padding, and sets flex properties for layout. */
+    padding: 1em;
+    flex-grow: 1;
+    flex-basis: calc(26% - 2em);
+    margin: 1em;
+    box-sizing: border-box;
+    flex-direction: column;
+    /*sets background with a linear gradient.*/
+    background: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    /* Defines background size, positioning, and overflow behavior. */
+    position: relative;
+    overflow: hidden;
+    /*Adds box shadow and transition effects. */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Applies the `animatedgradient` animation to create a continuously changing gradient effect over 10 seconds. */
+    animation: animatedgradient 10s infinite;
+}
+
+/* settings for pictures in small screens */
+@media (max-width: 768px) {
+    .attraction {
+        flex-basis: calc(50% - 2em);
+    }
+
+    .attraction:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .attraction img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .attraction .info {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
 /* settings for the whole footer */
 footer {
     background-color: #0288d1;
@@ -143,33 +248,18 @@ footer a {
 @media (max-width: 768px) {
     footer {
         flex-direction: column;
-        align-items: center; /* Center align the items */
+        align-items: center;
     }
-    footer div {
-        margin: 10px 0; /* Add more spacing for clarity */
-    }
-    .social-media img {
-        max-width: 28px; /* Smaller icons */
-    }
-    footer a {
-        margin: 10px; /* Space out links more evenly */
-    }
-}
 
-/* Responsive design for 600px and below */
-@media (max-width: 600px) {
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
     footer div {
         margin: 10px 0;
     }
+
     .social-media img {
-        max-width: 25px; /* Even smaller icons for small screens */
+        max-width: 28px;
     }
+
     footer a {
-        margin: 10px 0; /* Stack links vertically */
-        display: block; /* Block display for better stacking */
+        margin: 10px;
     }
 }
